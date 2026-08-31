@@ -20,8 +20,8 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
       <div className="w-full lg:hidden order-1">
         <ProjectImageCarousel images={imageList} title={title} />
       </div>
-      <div className="w-full max-w-md px-4 order-2 lg:order-1">
-        <h2 className="mb-2 block text-left text-lg font-bold md:text-xl lg:text-3xl">
+      <div className="w-full max-w-md px-4 order-2 lg:hidden">
+        <h2 className="mb-2 block text-left text-lg font-bold md:text-xl">
           {url ? (
             <Link href={url} target="_blank">
               {title}
@@ -40,7 +40,7 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
         </ul>
       </div>
       {/* Desktop: overlay layout */}
-      <div className="hidden lg:block relative inline-flex max-w-max w-full order-2">
+      <div className="hidden lg:block relative inline-flex max-w-max w-full">
         <header
           className={
             'absolute bottom-2/4 left-2/4 right-2/4 top-2/4 z-10 ml-0 flex -translate-x-2/4 -translate-y-2/4 items-center justify-center ' +
