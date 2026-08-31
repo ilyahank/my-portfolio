@@ -237,14 +237,20 @@ export default function Admin() {
       <main className="lg:ml-72 min-h-screen">
         {/* Top header */}
         <header className="sticky top-0 z-30 bg-gray-950/80 backdrop-blur-lg border-b border-gray-800">
-          <div className="px-6 py-4 flex items-center justify-between">
+          <div className="px-4 py-3 md:px-6 md:py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gray-800 rounded-lg">
+              <button
+                onClick={() => setSidebarOpen(true)}
+                className="lg:hidden p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white"
+              >
+                <FiMenu size={20} />
+              </button>
+              <div className="p-2 bg-gray-800 rounded-lg hidden lg:block">
                 {activeSection && <activeSection.icon size={20} className="text-blue-500" />}
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-white">{activeSection?.label}</h2>
-                <p className="text-xs text-gray-500">Manage your portfolio content</p>
+                <h2 className="text-base md:text-lg font-semibold text-white">{activeSection?.label}</h2>
+                <p className="text-xs text-gray-500 hidden md:block">Manage your portfolio content</p>
               </div>
             </div>
             <button
@@ -264,7 +270,7 @@ export default function Admin() {
         </header>
 
         {/* Content area */}
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {activeTab === 'theme' ? (
             <div className="max-w-2xl">
               <div className="bg-gray-900 rounded-xl border border-gray-800 p-6">

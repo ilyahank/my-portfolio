@@ -36,13 +36,13 @@ const Hero = async () => {
   }
 
   return (
-    <section>
+    <section className="px-4 py-8">
       <div className="flex flex-col justify-center items-center md:flex-row">
         <Avatar />
-        <div className="ml-0 md:ml-16">
+        <div className="ml-0 md:ml-16 mt-8 md:mt-0 text-center md:text-left">
           <GreetingSwitcher />
 
-          <h1 className="text-2xl font-normal leading-10">
+          <h1 className="text-lg font-normal leading-8 md:text-2xl md:leading-10">
             <span className="block">
               I am{' '}
               <span className="font-bold tracking-widest cursor-default animate-up bg-linear-to-r from-secondary to-secondary">
@@ -51,7 +51,7 @@ const Hero = async () => {
               , {profile.role}
             </span>
             from {profile.location} {profile.bioLine1}
-            <span className="block mt-5">
+            <span className="block mt-3 md:mt-5">
               {profile.bioLine2}
             </span>
           </h1>

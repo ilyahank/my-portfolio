@@ -41,7 +41,7 @@ export default function ProjectImageCarousel({ images, title }: { images: string
 
   return (
     <div className="relative flex w-full scale-[.99] items-center justify-center rounded-lg border-2 border-primary bg-primary opacity-50 shadow-lg transition ease-in hover:scale-100 hover:opacity-100 md:w-140">
-      <div className="relative h-[500px] w-full overflow-hidden rounded-lg bg-black/20">
+      <div className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full overflow-hidden rounded-lg bg-black/20">
         <Image
           className="h-full w-full rounded-lg object-contain"
           src={list[index]}
