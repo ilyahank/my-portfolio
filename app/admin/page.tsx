@@ -52,7 +52,7 @@ const EMPTY_ITEM: Record<string, any> = {
   highlights: { text: '' },
   skills: { name: '', logo: '' },
   greetings: { text: '', lang: '' },
-  projects: { title: '', des: '', tags: [], url: '', image: '' },
+  projects: { title: '', des: '', tags: [], url: '', images: [] },
   featuredRepositories: { title: '', url: '', stars: 0, forks: 0, description: '', tags: [] },
   openSourceProjects: { title: '', description: '', url: '', stars: 0, forks: 0, tags: [] }
 }
