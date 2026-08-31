@@ -43,19 +43,6 @@ const NavBar = () => {
                 </ul>
               )}
             </div>
-            <Link
-              href="/"
-              className="mr-7 flex h-10 w-10 scale-90 select-none rounded-full border-2 border-primary transition ease-in hover:scale-100"
-            >
-              <Image
-                className="rounded-full"
-                src="/images/icons/icon-72x72.png"
-                alt="Avatar"
-                draggable="false"
-                width={565}
-                height={565}
-              />
-            </Link>
             <div className="hidden md:flex">
               <ul className="inline-flex flex-row gap-3">
                 {webLinks.map((link, index) => (
