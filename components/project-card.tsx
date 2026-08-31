@@ -17,7 +17,7 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
   return (
     <article className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0">
       {/* Mobile/Tablet: stacked layout */}
-      <div className="w-full flex flex-col gap-4 lg:hidden">
+      <div className="project-mobile-view w-full flex-col gap-4">
         <ProjectImageCarousel images={imageList} title={title} />
         <div className="w-full max-w-md px-4">
           <h2 className="mb-2 block text-left text-lg font-bold md:text-xl">
@@ -41,7 +41,7 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
       </div>
       
       {/* Desktop: overlay layout */}
-      <div className="hidden lg:block relative inline-flex max-w-max w-full">
+      <div className="project-desktop-view relative max-w-max w-full">
         <header
           className={
             'absolute bottom-2/4 left-2/4 right-2/4 top-2/4 z-10 ml-0 flex -translate-x-2/4 -translate-y-2/4 items-center justify-center ' +

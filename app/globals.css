@@ -105,3 +105,18 @@ html, body {
   overflow-x: hidden;
   max-width: 100vw;
 }
+
+.project-mobile-view {
+  display: flex;
+}
+.project-desktop-view {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .project-mobile-view {
+    display: none;
+  }
+  .project-desktop-view {
+    display: block;
+  }
+}
