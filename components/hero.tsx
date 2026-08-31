@@ -2,6 +2,8 @@ import Avatar from './avatar';
 import GreetingSwitcher from './greeting-switcher';
 import { supabase } from '@/lib/supabase';
 
+export const revalidate = 0;
+
 interface Profile {
   name: string;
   role: string;

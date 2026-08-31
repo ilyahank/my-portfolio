@@ -44,7 +44,7 @@ const MULTI_IMAGE_FIELDS = ['images']
 
 const EMPTY_ITEM: Record<string, any> = {
   profile: { name: '', role: '', location: '', bioLine1: '', bioLine2: '' },
-  siteSettings: { copyrightName: '', goalsHeading: '', repositoriesHeading: '' },
+  siteSettings: { copyrightName: '', goalsHeading: '', repositoriesHeading: '', projectsHeading: '', projectsDescription: '', openSourceHeading: '', openSourceDescription: '' },
   goals: { heading: '', items: [{ id: Date.now(), text: '' }] },
   companies: { institution: '', logo: '', degree: '', startDate: '', endDate: '' },
   institutions: { institution: '', logo: '', degree: '', startDate: '', endDate: '' },

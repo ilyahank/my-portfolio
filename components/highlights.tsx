@@ -1,5 +1,7 @@
 import { supabase } from '@/lib/supabase';
 
+export const revalidate = 0;
+
 const Highlights = async () => {
   let goalsHeading = 'New year, New goals:';
   let goalsItems = [

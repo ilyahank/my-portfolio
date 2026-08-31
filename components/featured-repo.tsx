@@ -7,6 +7,8 @@ import { supabase } from '@/lib/supabase';
 import Heading from './heading';
 import RepoCard from './repo-card';
 
+export const revalidate = 0;
+
 export default async function FeaturedRepo() {
   let repositoriesHeading = 'Featured Repositories';
   let repositories = [];

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 
 export default function ProjectImageCarousel({ images, title }: { images: string[], title: string }) {
@@ -7,14 +7,14 @@ export default function ProjectImageCarousel({ images, title }: { images: string
   const list = images && images.length > 0 ? images : ['/images/placeholder.png']
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  const resetAutoSlide = () => {
+  const resetAutoSlide = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
     }
     intervalRef.current = setInterval(() => {
       setIndex(i => (i === list.length - 1 ? 0 : i + 1))
     }, 10000)
-  }
+  }, [list.length])
 
   useEffect(() => {
     resetAutoSlide()
@@ -23,7 +23,7 @@ export default function ProjectImageCarousel({ images, title }: { images: string
         clearInterval(intervalRef.current)
       }
     }
-  }, [])
+  }, [resetAutoSlide])
 
   const prev = (e: React.MouseEvent) => {
     e.preventDefault()
