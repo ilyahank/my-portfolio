@@ -100,3 +100,8 @@
   --text-color: #ffffff;
   --accent-color: #333333;
 }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

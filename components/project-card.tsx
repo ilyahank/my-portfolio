@@ -65,7 +65,7 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
             </h2>
             <p
               className={
-                'w-72 lg:w-80 rounded-lg border-2 border-background bg-card p-4 text-left text-base ' +
+                'w-[85vw] max-w-72 lg:w-80 rounded-lg border-2 border-background bg-card p-4 text-left text-base ' +
                 (leftAlign ? 'md:text-left' : 'md:text-right')
               }
             >
