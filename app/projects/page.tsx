@@ -24,10 +24,10 @@ export default async function Projects() {
   const projectsDescription = siteSettings.projectsDescription || 'Discover a collection of projects highlighting my journey as a web developer';
 
   return (
-    <section>
+    <section className="px-4 py-8">
       <Heading text={projectsHeading} />
       <Description text={projectsDescription} />
-      <div className="space-y-10">
+      <div className="space-y-12 lg:space-y-10">
         {projectList.map((project: any, idx: number) => (
           <ProjectCard key={project.id ?? idx} leftAlign={(idx + 1) % 2 === 0} {...project} />
         ))}
