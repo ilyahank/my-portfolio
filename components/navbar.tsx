@@ -50,7 +50,7 @@ const NavBar = () => {
               <Image
                 className="rounded-full"
                 src="/images/icons/icon-72x72.png"
-                alt="Shafin's avatar"
+                alt="Avatar"
                 draggable="false"
                 width={565}
                 height={565}
@@ -76,7 +76,7 @@ const NavBar = () => {
             <a
               target="_blank"
               aria-label="github link"
-              href="https://github.com/shahriarshafin"
+              href="https://github.com/ihannouna"
               className="cursor-pointer rounded-xl p-3 transition ease-in hover:bg-background"
             >
               <FaGithub />

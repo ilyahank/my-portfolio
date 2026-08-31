@@ -2,9 +2,9 @@ import { BASE_URL } from '@/lib/constants';
 
 export default function manifest() {
   return {
-    name: 'Shahriar Shafin',
-    short_name: 'Shafin',
-    description: 'Shahriar Shafin protfolio website',
+    name: 'Ilyas Hannouna',
+    short_name: 'Ilyas',
+    description: 'Ilyas Hannouna portfolio website',
     theme_color: '#1A85FF',
     background_color: '#171923',
     manifest_version: 2,
@@ -13,21 +13,13 @@ export default function manifest() {
     scope: '/',
     start_url: '/',
     id: '/',
-    categories: ['Portfolio', 'Shafin'],
+    categories: ['Portfolio'],
     version: '3.1.0',
     orientation: 'portrait',
     lang: 'en-US',
     capture_links: 'existing_client_event',
     url_handlers: [{ origin: `${BASE_URL}` }],
     prefer_related_applications: true,
-    protocol_handlers: [
-      {
-        protocol: 'web+Shafin',
-        name: 'Open with Shafin',
-        description: 'Handles links with the shafin protocol',
-        url: '/?url=%s'
-      }
-    ],
     icons: [
       {
         src: '/images/icons/icon-72x72.png',

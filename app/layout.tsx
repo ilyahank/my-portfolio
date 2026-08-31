@@ -24,18 +24,18 @@ export async function generateMetadata() {
     pageType: 'Portfolio',
     other: {
       'page-type': 'Portfolio',
-      copyright: 'Shahriar Shafin',
+      copyright: 'Ilyas Hannouna',
       audience: 'Everyone',
-      'itemProp:name': 'Shahriar Shafin | Frontend Developer',
+      'itemProp:name': 'Ilyas Hannouna | Frontend Developer',
       'itemProp:description':
-        'Shahriar Shafin is a web designer & front-end web developer based in Dhaka, Bangladesh',
+        'Ilyas Hannouna is a web designer & front-end web developer',
       'itemProp:image': `${BASE_URL}/opengraph-image.png`
     },
     metadataBase: new URL(BASE_URL),
 
     title: {
-      default: 'Shahriar Shafin | Frontend Developer',
-      template: '%s | Shahriar Shafin'
+      default: 'Ilyas Hannouna | Frontend Developer',
+      template: '%s | Ilyas Hannouna'
     },
     verification: {
       google: 'process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION'
@@ -44,34 +44,27 @@ export async function generateMetadata() {
     description:
       'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
 
-    applicationName: 'Shahriar Shafin',
+    applicationName: 'Ilyas Hannouna',
 
     keywords: [
-      'shafin',
-      'shafin uap',
-      'shahriar shafin',
-      'shafin website',
-      'shafin bd',
-      'shafin portfolio',
       'frontend developer',
       'web developer',
       'React.js',
       'Next.js',
       'TailwindCSS',
-      'Bangladesh',
       'open source contributor'
     ],
-    authors: [{ name: 'Shahriar Shafin', url: BASE_URL }],
-    creator: 'Shahriar Shafin',
-    publisher: 'Shahriar Shafin',
+    authors: [{ name: 'Ilyas Hannouna', url: BASE_URL }],
+    creator: 'Ilyas Hannouna',
+    publisher: 'Ilyas Hannouna',
 
     openGraph: {
-      title: 'Shahriar Shafin',
+      title: 'Ilyas Hannouna',
       description:
         'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
-      authors: ['Shahriar Shafin'],
+      authors: ['Ilyas Hannouna'],
       url: BASE_URL,
-      siteName: 'Shahriar Shafin',
+      siteName: 'Ilyas Hannouna',
       locale: 'en_US',
       type: 'website',
       images: [
@@ -79,19 +72,17 @@ export async function generateMetadata() {
           url: `${BASE_URL}/opengraph-image.png`,
           width: 1200,
           height: 630,
-          alt: 'Shahriar Shafin | Frontend Developer',
+          alt: 'Ilyas Hannouna | Frontend Developer',
           type: 'image/png'
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Shahriar Shafin',
+      title: 'Ilyas Hannouna',
       description:
         'Frontend developer specializing in React.js & Next.js. Building excellent software that improves lives through open source contributions and innovative web solutions',
       images: [`${BASE_URL}/opengraph-image.png`],
-      creator: '@connectshafin',
-      site: '@connectshafin',
       url: BASE_URL
     },
     icons: {

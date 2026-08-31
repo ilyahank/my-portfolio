@@ -1,26 +1,23 @@
 <p align="center">
-    <img src="public/images/icons/shafin-logo.png" alt="Logo" width="200">
+    <img src="public/images/icons/logo.png" alt="Logo" width="200">
 </p>
 
 <p align="center">
 <a href="" target="blank">
-<img alt="GitHub deployments" src="https://img.shields.io/github/deployments/shahriarshafin/myportfolio/production?label=vercel&logo=vercel&logoColor=vercel&style=flat-square">
+<img alt="GitHub deployments" src="https://img.shields.io/github/deployments/ihannouna/myportfolio/production?label=vercel&logo=vercel&logoColor=vercel&style=flat-square">
 </a>
-<a href="https://github.com/shahriarshafin/myportfolio/blob/master/LICENSE" target="blank">
+<a href="https://github.com/ihannouna/myportfolio/blob/master/LICENSE" target="blank">
 <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="licence" />
-</a>
-<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20portfolio!%20https://shafin.live/,%20created%20by%20@connectshafin">
-<img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fshahriar%2Fshafin">
 </a>
 </p>
 
 <div align="center">
 <h1>
-<a href="https://shafin.vercel.app/" target="_blank">Shahriar Shafin</a>
+<a href="https://your-portfolio-url.com/" target="_blank">Ilyas Hannouna</a>
 </h1>
 A personal portfolio website to show skills, experiences, and projects
     <br/>
-   <h2> Folk / Clone and make your own! show some love by giving 🌟</h1>
+   <h2> Fork / Clone and make your own! show some love by giving 🌟</h1>
 </div>
 
 <br/>
@@ -30,13 +27,13 @@ A personal portfolio website to show skills, experiences, and projects
 1. Clone the repository
 
 ```bash
-https://github.com/shahriarshafin/shahriarshafin.github.io.git
+git clone https://github.com/ihannouna/myportfolio.git
 ```
 
 2. Change the working directory
 
 ```bash
-cd shahriarshafin.github.io
+cd myportfolio
 ```
 
 3. Install dependencies
@@ -47,7 +44,7 @@ npm install # or, yarn install
 
 4. Create .env
 
-> Create a `.env` file similar to `.env.example`
+> Create a `.env` file similar to `.env.example` and add your Supabase credentials
 
 5. Run the app in development mode
 
@@ -60,7 +57,7 @@ That's All! Now open [localhost:3000](http://localhost:3000/) to see the app.
 ## Built with
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **API**: [Github API](https://api.github.com)
+- **Backend**: [Supabase](https://supabase.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icon Packs**: [React-Icons](https://react-icons.github.io/react-icons/)
 - **Analytics**: [Google Analytics](https://analytics.google.com/)

@@ -1,8 +1,8 @@
-name: Deploy Shafin's Portfolio
+name: Deploy Portfolio
 
 on:
   push:
-    branches: ['v2']
+    branches: ['main']
   workflow_dispatch:
 
 jobs:
@@ -18,23 +18,16 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install dependencies
-        run: yarn install
-
-      # Generate Prisma Client
-      - name: Generate Prisma Client
-        run: npx prisma generate
+        run: npm install
 
       - name: Build with Next.js
-        run: yarn next build
-
-      - name: Export static HTML
-        run: yarn next export
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: out
-          path: out
+          path: .next
 
   deploy:
     needs: build
@@ -56,13 +49,10 @@ jobs:
           cd gh-pages
           git checkout gh-pages || git checkout --orphan gh-pages
           rm -rf ./*
-          cp -r ../out/* .
+          cp -r ../.next/* .
           git add .
           git commit -m "Deploy GitHub Pages"
           git push origin gh-pages
         env:
-          GITHUB_ID: ${{ secrets.SHAFIN_GITHUB_ID }}
-          GITHUB_SECRET: ${{ secrets.SHAFIN_GITHUB_SECRET }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
