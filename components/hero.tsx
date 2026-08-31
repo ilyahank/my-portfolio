@@ -1,7 +1,38 @@
 import Avatar from './avatar';
 import GreetingSwitcher from './greeting-switcher';
+import { supabase } from '@/lib/supabase';
 
-const Hero = () => {
+interface Profile {
+  name: string;
+  role: string;
+  location: string;
+  bioLine1: string;
+  bioLine2: string;
+}
+
+const Hero = async () => {
+  let profile: Profile = {
+    name: 'Shahriar Shafin',
+    role: 'a web developer',
+    location: 'Bangladesh',
+    bioLine1: 'who focuses on frontend technologies & collaborates to open source projects',
+    bioLine2: 'I am passionate about building excellent software that improves the lives of those around me.'
+  };
+
+  try {
+    const { data, error } = await supabase
+      .from('site_content')
+      .select('value')
+      .eq('key', 'profile')
+      .single();
+    
+    if (data?.value) {
+      profile = data.value;
+    }
+  } catch (e) {
+    console.error('Error fetching profile from Supabase:', e);
+  }
+
   return (
     <section>
       <div className="flex flex-col justify-center items-center md:flex-row">
@@ -13,15 +44,13 @@ const Hero = () => {
             <span className="block">
               I am{' '}
               <span className="font-bold tracking-widest cursor-default animate-up bg-linear-to-r from-secondary to-secondary">
-                Shahriar Shafin
+                {profile.name}
               </span>
-              , a web developer
+              , {profile.role}
             </span>
-            from Bangladesh who focuses on frontend technologies & collaborates to open source
-            projects.
+            from {profile.location} {profile.bioLine1}
             <span className="block mt-5">
-              I am passionate about building excellent software that improves the lives of those
-              around me.
+              {profile.bioLine2}
             </span>
           </h1>
         </div>

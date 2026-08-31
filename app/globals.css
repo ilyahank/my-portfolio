@@ -93,3 +93,10 @@
     @apply py-10;
   }
 }
+
+:root {
+  --primary-color: #0070f3;
+  --background-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-color: #333333;
+}

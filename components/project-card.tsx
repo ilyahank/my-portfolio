@@ -1,18 +1,19 @@
-import Image from 'next/image';
 import Link from 'next/link';
-
-import { shimmer, toBase64 } from '@/lib/utils';
+import ProjectImageCarousel from '@/components/project-image-carousel';
 
 interface ProjectCardProps {
   leftAlign?: boolean;
-  image: string;
+  images?: string[];
+  image?: string;
   title: string;
   des: string;
   tags: string[];
   url: string;
 }
 
-const ProjectCard = ({ leftAlign, image, title, des, tags, url }: ProjectCardProps) => {
+const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: ProjectCardProps) => {
+  const imageList = images && images.length > 0 ? images : image ? [image] : [];
+
   return (
     <article
       className={'flex justify-center ' + (leftAlign ? 'lg:justify-end' : 'lg:justify-start')}
@@ -39,7 +40,6 @@ const ProjectCard = ({ leftAlign, image, title, des, tags, url }: ProjectCardPro
                 title
               )}
             </h2>
-
             <p
               className={
                 'w-72 rounded-lg border-2 border-background bg-card p-4 text-left text-xs md:w-80 md:text-base ' +
@@ -60,34 +60,7 @@ const ProjectCard = ({ leftAlign, image, title, des, tags, url }: ProjectCardPro
             </ul>
           </div>
         </header>
-
-        {url ? (
-          <Link href={url} target="_blank">
-            <div className="relative flex w-full scale-[.99] rounded-lg border-2 border-primary bg-primary opacity-25 shadow-lg transition ease-in hover:scale-100 hover:opacity-100 md:w-140 md:opacity-50">
-              <Image
-                className="h-full w-full rounded-lg"
-                src={image}
-                alt={`Project - ${title}`}
-                draggable="false"
-                width={1994}
-                height={1314}
-                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1994, 1314))}`}
-              />
-            </div>
-          </Link>
-        ) : (
-          <div className="relative flex w-full scale-[.99] rounded-lg border-2 border-primary bg-primary opacity-25 shadow-lg transition ease-in hover:scale-100 hover:opacity-100 md:w-140 md:opacity-50">
-            <Image
-              className="h-full w-full rounded-lg"
-              src={image}
-              alt={`Project - ${title}`}
-              draggable="false"
-              width={1994}
-              height={1314}
-              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1994, 1314))}`}
-            />
-          </div>
-        )}
+        <ProjectImageCarousel images={imageList} title={title} />
       </div>
     </article>
   );

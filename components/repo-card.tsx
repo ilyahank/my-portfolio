@@ -19,7 +19,7 @@ const RepoCard = ({ html_url, name, stargazers_count, forks_count, description, 
       <div className="flex h-30 flex-col justify-between">
         <div className="mb-2 flex items-center justify-between">
           <h2 className="inline-block text-lg font-bold text-primary transition ease-in hover:text-primary-foreground">
-            <Link href={html_url} target="_blank">
+            <Link href={html_url || '#'} target="_blank">
               {name}
             </Link>
           </h2>

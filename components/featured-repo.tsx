@@ -2,53 +2,46 @@ import Link from 'next/link';
 
 import { HiCursorClick } from 'react-icons/hi';
 
-import { GITHUB_API_URL, GITHUB_USERNAME } from '@/lib/constants';
-
-import { featuredRepositories } from '@/app/data/data';
+import { supabase } from '@/lib/supabase';
 
 import Heading from './heading';
 import RepoCard from './repo-card';
 
-async function fetchRepositoriesData() {
-  const reposData = await Promise.all(
-    featuredRepositories.map(async (repoName) => {
-      try {
-        const url = `${GITHUB_API_URL}/repos/${GITHUB_USERNAME}/${repoName}`;
-        const response = await fetch(url, {
-          next: { revalidate: 3600 } // Revalidate every hour
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        return response.json();
-      } catch (error) {
-        console.error(`Error fetching ${repoName}:`, error);
-        return null;
-      }
-    })
-  );
-  return reposData.filter(Boolean);
-}
-
 export default async function FeaturedRepo() {
-  const repositories = await fetchRepositoriesData();
+  let repositoriesHeading = 'Featured Repositories';
+  let repositories = [];
+
+  try {
+    const [settingsData, reposData] = await Promise.all([
+      supabase.from('site_content').select('value').eq('key', 'siteSettings').single(),
+      supabase.from('site_content').select('value').eq('key', 'featuredRepositories').single()
+    ]);
+    
+    if (settingsData.data?.value?.repositoriesHeading) {
+      repositoriesHeading = settingsData.data.value.repositoriesHeading;
+    }
+
+    if (reposData.data?.value && Array.isArray(reposData.data.value)) {
+      repositories = reposData.data.value;
+    }
+  } catch (e) {
+    console.error('Error fetching featured repositories from Supabase:', e);
+  }
 
   return (
     <section>
-      <Heading text="Featured Repositories" />
+      <Heading text={repositoriesHeading} />
       <div className="mt-3 space-y-4">
         <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {repositories.map((repo) => (
+          {repositories.map((repo: any, index: number) => (
             <RepoCard
-              key={repo.id}
-              html_url={repo.html_url}
-              name={repo.name}
-              stargazers_count={repo.stargazers_count}
-              forks_count={repo.forks_count}
+              key={repo.id ?? repo.url ?? repo.title ?? index}
+              html_url={repo.url}
+              name={repo.title}
+              stargazers_count={repo.stars}
+              forks_count={repo.forks}
               description={repo.description}
-              topics={repo.topics}
+              topics={repo.tags}
             />
           ))}
         </div>

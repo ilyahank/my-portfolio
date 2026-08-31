@@ -6,6 +6,7 @@ import { BASE_URL } from '@/lib/constants';
 
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import ThemeLoader from '@/components/ThemeLoader';
 
 import './globals.css';
 
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <html lang="en" className={`${cabin.className} h-full scroll-smooth`}>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_TRACKING_ID || ''}  />
       <body className="antialiased">
+        <ThemeLoader />
         <Navbar />
         <main className="relative isolate overflow-hidden">
           <div className="mx-auto min-h-svh w-full max-w-200 px-5 py-3 pt-16 md:px-10 lg:px-0">
