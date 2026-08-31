@@ -14,11 +14,11 @@ interface Profile {
 
 const Hero = async () => {
   let profile: Profile = {
-    name: 'Shahriar Shafin',
-    role: 'a web developer',
-    location: 'Bangladesh',
-    bioLine1: 'who focuses on frontend technologies & collaborates to open source projects',
-    bioLine2: 'I am passionate about building excellent software that improves the lives of those around me.'
+    name: 'Your Name',
+    role: 'Your Role',
+    location: 'Your Location',
+    bioLine1: 'Your first bio line',
+    bioLine2: 'Your second bio line'
   };
 
   try {
