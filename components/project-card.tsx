@@ -17,7 +17,7 @@ const ProjectCard = ({ leftAlign, images, image, title, des, tags, url }: Projec
   return (
     <article className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-0">
       {/* Mobile/Tablet: stacked layout */}
-      <div className="w-full lg:hidden flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 lg:hidden">
         <ProjectImageCarousel images={imageList} title={title} />
         <div className="w-full max-w-md px-4">
           <h2 className="mb-2 block text-left text-lg font-bold md:text-xl">
